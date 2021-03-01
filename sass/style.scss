@@ -80,10 +80,11 @@ body {
   list-style-type: none;
   margin: 0;
   padding: 0;
-}
-.list a .active {
+  .active {
     font-weight: bold;
   }
+}
+
 .list-horizontal {
   li {
     display: inline-block;

@@ -226,7 +226,6 @@ function generateAuthors() {
 
     const authorList = article.querySelector(optArticleAuthorSelector);
 
-    console.log(authorList)
 
     /* make html variable with empty string */
     
@@ -250,7 +249,7 @@ function generateAuthors() {
     /* insert HTML of all the links into the tags wrapper */
 
     authorList.innerHTML = html;
-  }
+}
 
   /* END LOOP: for every article: */
 }
@@ -269,13 +268,12 @@ function authorClickHandler(event){
 
   const href = clickedElement.getAttribute("href");
 
-  /* make a new constant "tag" and extract tag from the "href" constant */
+  /* make a new constant "author" and extract tag from the "href" constant */
 
   const author = href.replace('#author-', '');
+  /* find all authors links with class active */
 
-  /* find all tag links with class active */
-
-  const activeLinks = clickedElement.querySelectorAll('a.active[href^="#author-"]');
+  const activeLinks = clickedElement.querySelectorAll('a[href^="#author-' + href + '"]');
 
   /* START LOOP: for each active tag link */
 
@@ -291,7 +289,7 @@ function authorClickHandler(event){
 
   /* execute function "generateTitleLinks" with article selector as argument */
  
-  generateTitleLinks('[data-author~="' + author + '"]');
+  generateTitleLinks('[data-author="' + author + '"]');
 }
 
 function addClickListenersToAuthors(){

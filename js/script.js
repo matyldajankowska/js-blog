@@ -106,21 +106,7 @@ function calculateTagsParams (tags){
 }
 calculateTagsParams();
 
-function calculateAuthorsParams(authors){
 
-  const params = {max: 0, min: 9999};
-
-  for(let author in authors){
-
-    if(authors[author] > params.max){
-      params.max = authors[author];
-    } 
-    else if (authors[author] < params.min){
-      params.min = authors[author];
-    } 
-  }
-  return params;
-}
 
 function calculateTagClass (count, params){
 

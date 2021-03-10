@@ -284,7 +284,7 @@ function generateAuthors() {
   /* START LOOP: for every article: */
 
   for (let article of articles) {
-    article.querySelector(optArticleSelector);
+    
 
     /*find authors wrapper */
 
@@ -324,7 +324,7 @@ function generateAuthors() {
 }
 
   /* END LOOP: for every article: */
-}
+
   /* [NEW] find list of tags in right column */
   const authorList = document.querySelector('.authors');
 
@@ -334,14 +334,14 @@ function generateAuthors() {
   /* NEW START LOOP: for each tag in allTags: */
   for (let author in allAuthors){
     /* NEW generate code of a link and add it to allTagsHTML */
-    allAuthorsHTML = '<a href="#author-'+ author + '">' + author + ' (' + allAuthors[author] + ') ' + '</a>';
-    
+    allAuthors = author + ' (' + allAuthors[author] + ') ';  
   }
   /* NEW END LOOP: for each tag in AllTags */
 
   /* NEW add html from allTagsHTML to tagList */
   authorList.innerHTML = allAuthorsHTML;
-
+  
+}
 
 generateAuthors();
 

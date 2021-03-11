@@ -334,13 +334,13 @@ function generateAuthors() {
   /* NEW START LOOP: for each tag in allTags: */
   for (let author in allAuthors){
     /* NEW generate code of a link and add it to allTagsHTML */
-    allAuthors = author + ' (' + allAuthors[author] + ') ';  
-  }
+    const allAuthorsHTML = '<li><a href="#author-' + author + '">' + author + '</a></li>';
+  
   /* NEW END LOOP: for each tag in AllTags */
-
+  
   /* NEW add html from allTagsHTML to tagList */
   authorList.innerHTML = allAuthorsHTML;
-  
+  } 
 }
 
 generateAuthors();

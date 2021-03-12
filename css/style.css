@@ -135,12 +135,7 @@ body {
   font-size: 35px;
 }
 
-a {
-  text-decoration: none;
-}
-
 ul ul {
-  list-style-type: none ;
+  list-style-type: none;
   padding-inline-start: 0px;
-} 
-/*# sourceMappingURL=style.css.map */
+}

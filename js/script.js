@@ -162,7 +162,7 @@ function generateTags(){
       /* generate HTML of the link */
 
       const linkHTMLData = {id: tag, title: tag};
-      const linkHTML = templates.articleTag(linkHTMLData);
+      const linkHTML = templates.tagLink(linkHTMLData);
 
       /* add generated code to html variable */
 
@@ -200,7 +200,7 @@ function generateTags(){
   for (let tag in allTags){
     /* NEW generate code of a link and add it to allTagsHTML */
     
-    const tagLinkHTML = '<li><a href="#tag-' +  tag + '" class="' + calculateTagClass (allTags[tag], tagsParams) +'"><span>' + tag + '</span></a></li>';
+    /*const tagLinkHTML = '<li><a href="#tag-' +  tag + '" class="' + calculateTagClass (allTags[tag], tagsParams) +'"><span>' + tag + '</span></a></li>';*/
     allTagsData.tags.push({
       tag: tag,
       count: allTags[tag],
@@ -328,16 +328,16 @@ function generateAuthors() {
         allAuthors[author] = 1;
       } else {
         allAuthors[author]++;
-
-        authorsListHTML = authorsListHTML + authorList.innerHTML;
       }
     
     /* END LOOP: for each author */
-    
+      
+  }
 
     authorList.innerHTML = html;
+  
 }
-}
+
 
   /* END LOOP: for every article: */
 
@@ -358,10 +358,7 @@ function generateAuthors() {
   /* NEW END LOOP: for each tag in AllTags */
 
   /* NEW add html from allTagsHTML to tagList */
-  authorList.innerHTML = html;
-
-  
-
+  authorList.innerHTML = templates.authorCloudLink(allAuthorsData);
 
 generateAuthors();
 
